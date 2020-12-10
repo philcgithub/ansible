@@ -1,5 +1,8 @@
-# Use the following command to run:
+# Use the following command to test:
 # ansible-inventory --graph -i google.cloud.gcp_compute.yaml
+#
+# and the following is an example of using this dynamic inventory:
+# ansible -i google.cloud.gcp_compute.yaml all -m ping
 #
 # Pre-reqs:
 # pip install requests google-auth
@@ -12,6 +15,6 @@ projects: # populate inventory with instances in these projects
 filters: [] # apply these filters to the compute instances
 service_account_file: ~/Google Drive/Keys/philsa@pcherry-cbcore-trad/service_account.json # the name of the serviceaccount key json file (eg the output of gcloud iam service-accounts keys create ~/key.json --iam-account philsa@pcherry-cbcore-trad.iam.gserviceaccount.com)
 auth_kind: serviceaccount # the type of authentication
-hostnames:
-  # List host by name instead of the default public ip
-  - name
+#hostnames:
+#  # List host by name instead of the default public ip
+#  - name
